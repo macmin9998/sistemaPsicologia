@@ -1,0 +1,1 @@
+Esta carpeta solo contiene archivos que se incluyen en el proyecto

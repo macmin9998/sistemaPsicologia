@@ -1,0 +1,1 @@
+Esta carpeta solo incluye archivos de imagen
