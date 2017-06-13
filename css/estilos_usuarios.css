@@ -1,0 +1,70 @@
+body{
+	background-image: url(fondo.jpg);
+	background-size: 100vw 100vh;
+}
+
+form{
+	width: 450px;
+	margin: auto;
+	background: rgb(243,243,243);
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	border-radius: 20px;
+	border: 1px solid #000;
+}
+
+form input[type='text'],input[type='password'] {
+	border: 1px solid rgba(0,0,0,0.9);
+}
+.anuncio{
+	width: 400px;
+	color: #fff;
+	text-align: center;
+	font-size: 25px;
+	background: rgba(85,85,85,0.3);
+	padding: 6px;
+	border-radius: 7px;
+	margin: auto;
+	margin-top: 60px;
+	border-radius: 20px;
+
+}
+
+
+h2
+{
+	color: #3b5998;
+	text-align: center;
+	margin: 0;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+input
+{
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 7px;
+	box-sizing: border-box;
+	font-size: 17px;
+}
+
+#boton{
+	background: #3b5998;
+	color: #fff;
+	padding: 20px;
+}
+
+#boton:hover{
+	cursor: pointer;
+}
+
+@media (max-width:480px){
+	form{
+		width: 100%;
+	}
+	.anuncio{
+		width: 90%;
+	}
+}
