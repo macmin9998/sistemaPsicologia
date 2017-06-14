@@ -1,11 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['sun'])){
 
-	include("includs/conexion.php")
-
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,33 +10,51 @@ if(isset($_SESSION['sun'])){
 
 		<link rel="stylesheet" href="css/estilos_usuarios.css">
 		
-		<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+		
 		<script src="javascript/main.js" ></script>
 		<script src="javascript/validaBorrarUsuarios.js" ></script>
 
+		<!--LIGA PARA JQUERY -->
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+
 	</head>
 	<body>
+	<!--
 	<?php
-		include("menu_pagina.html");
+		//include("menu_pagina.html");
 	?>
-		<form action="" method="post" onsubmit="return validar()">
+
+	-->
+		<form >
 			<h2>Borrar Usuario</h2>
-			<input type="text" name="usuario" id="usuario" placeholder="Usuario">
-			<input type="submit" value="Borrar Usuario" id="boton" name ="borrar">
+			<input type="text"  id="usuario" placeholder="Usuario">
+			<input type="button" value="Borrar Usuario" id="botonBorrar" >
+		
 		</form>
+
 		<script type="text/javascript">
 			$(function(){
-				$("#boton").click(function(){
+				$("#botonBorrar").click(function(){
+
 					var cajaUsuario = $("#usuario").val();
-				$.post('#',
+                    alert("Eliminando Usuario...");
+				$.post('ws/wsUsuarios.php',
 				{
-					WS:"#",
-					usurario:cajaUsuario
+					WS:"deleteUsuario",
+					usuario:cajaUsuario
 					},function(Respuesta){
-						window.location= window.location;
-				},"json");
+						       
+						                 alert(Respuesta.Mensaje);
+										if(Respuesta.codMensaje == 100)
+								 	    	window.location =window.location; 
+										else if(Respuesta.codMensaje == 200){
+											
+										    alert(Respuesta.Datos);	
+								        }
+										
+					},"json");
+				});
 			});
-		});
 		</script>
 	</body>
 </html>

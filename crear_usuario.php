@@ -1,9 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['sun'])){
 
-	include("includs/conexion.php");
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,38 +11,59 @@ if(isset($_SESSION['sun'])){
 		<link rel="stylesheet" href="css/estilos_usuarios.css">
 
 
-		<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <!--
 		<script src="javascript/main.js" ></script>
 		<script src="javascript/validaCrearUsuarios.js" ></script>
+	-->
 	</head>
 	<body>
-		<?php
-		include("menu_pagina.html");
+		
+   <!--		<?php
+		// include("menu_pagina.html");
 		?>
-		<form action="" method="post" onsubmit="return validar()">
+    -->
+
+		<form>
+			
 			<h2>Crear usuario</h2>
 			<input type="text" name="usuario" id="usuario" placeholder="Usuario">
 			<input type="password" name="clave" id="clave" placeholder="Contraseña">
 			<input type="password" name="repetir_clave" id="repetirclave" placeholder="Repetir Contraseña">
-			<input type="submit" value="Crear Usuario" id="boton" name="crear">
+			
+			<input type="button" id="botonId" value="Registrar Usuario">
 		</form>
+	
 		<script type="text/javascript">
 			$(function(){
-				$("#boton").click(function(){
+				$("#botonId").click(function(){
 					var cajaUsuario = $("#usuario").val();
 					var cajaClave = $("#clave").val();
 					var cajaRepetir =$("#repetirclave").val();
-				$.post('#',
+				
+				$.post('ws/wsUsuarios.php',
 				{
-					WS:"#",
-					usurario:cajaUsuario,
+					
+					WS:"addUsuario",
+					usuario:cajaUsuario,
 					clave:cajaClave,
 					repetirClave:cajaRepetir
+					
 					},function(Respuesta){
-						window.location= window.location;
-				},"json");
+                    
+					                    alert(Respuesta.Mensaje);
+										if(Respuesta.codMensaje == 100)
+												window.location =window.location;
+										else if(Respuesta.codMensaje == 200){
+											
+										    alert(Respuesta.Datos);	
+								        }
+
+						
+				
+					 },"json");
+				});
 			});
-		});
 		</script>
 	</body>
 </html>
