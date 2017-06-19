@@ -13,17 +13,16 @@
     
 
     <script src="js/jquery-3.2.1.js"></script>
-
+    <script src="js/main.js" ></script>
     
     <script src="validacionJs/index.js" ></script> 
     <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
-    <script src="javascript/main.js" ></script>
-
+   
 </head>
 <body>
 
     <?php 
-        // include("menu_pagina.html");
+        include("menu_pagina.html");
     ?>
 
 
@@ -36,7 +35,7 @@
     	
     			<input type="text"  id="nombreId" placeholder="Titulo del Examen"><br><br>
     	
-    			<input type="button" id="crearExamenBtn" value="Crear Examen">
+    			<input type="button" id="crearExamenBtn" value="Crear Examen" class="boton">
 
         	</form>
 
