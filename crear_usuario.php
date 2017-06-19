@@ -13,6 +13,7 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 		<script src="js/main.js" ></script>
 
+
 	</head>
 	<body>
 		
@@ -20,6 +21,7 @@
 			include("menu_pagina.html");
 		?>
 		
+
 		<form>
 			
 			<h2>Crear usuario</h2>

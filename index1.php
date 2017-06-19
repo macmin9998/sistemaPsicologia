@@ -1,38 +1,3 @@
-<?php
-//session_start();
-//if(isset($_SESSION['sun'])){
-
-include "includs/conexion.php";
-
-
-if (isset($_POST['crearExamenBtn'])) {
-    $errors = array();
-
-
-	if (!isset($_POST['TituloTxt']) || empty($_POST['TituloTxt']) || ctype_digit($_POST['TituloTxt'])  ){
-	//aparece un error 
-
-       $errors[]="nombre de examen no valido";
-
-    }
-
-
-
-if(count($errors) == 0) {  
-
-
-        
-        $nombre=$_POST['TituloTxt'];
-
-		$insertExamen=$conexion->query("insert into examen(nombre) values ('$nombre') ");
-   		header('Location:Lista.php');
-}
-
-    
-}
-
-
-?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -47,7 +12,7 @@ if(count($errors) == 0) {
     <link rel="stylesheet" href="css/nuevo.css">
     
 
-    
+    <script src="js/jquery-3.2.1.js"></script>
 
     
     <script src="validacionJs/index.js" ></script> 
@@ -56,31 +21,22 @@ if(count($errors) == 0) {
 
 </head>
 <body>
-    <?php
-        include("menu_pagina.html");
-        ?>
 
-<?php
+    <?php 
+        // include("menu_pagina.html");
+    ?>
 
-        if(isset($errors) and count($errors) > 0 ){
-            foreach($errors as $error){
-               
-               
-               echo "<div class='divError'>".$error."</div>";
-            
-            }
-        }
-?> 
 
     <div class="wrap">
     	<center>
-    		<form action="" method="POST" onsubmit="return validaF();">
+
+    		<form >
     		
     			<h1>Nuevo Examen</h1>
     	
-    			<input type="text" name="TituloTxt" id="nombreId" placeholder="Titulo del Examen"><br><br>
+    			<input type="text"  id="nombreId" placeholder="Titulo del Examen"><br><br>
     	
-    			<input type="submit" name="crearExamenBtn" id="crearExamenBtn" value="Crear Examen">
+    			<input type="button" id="crearExamenBtn" value="Crear Examen">
 
         	</form>
 
@@ -92,28 +48,24 @@ if(count($errors) == 0) {
 			$("#crearExamenBtn").click(function(){
 				var cajaExamen = $("#nombreId").val();
 			
-			$.post('#',
+			$.post('ws/WsExamen.php',
 			{
-				WS:"#",
+				WS:"addExamen",
 				examen:cajaExamen
+
 			},function(Respuesta){
+
 				alert(Respuesta.Mensaje);
-				if(Respuesta.CodMensaje==100)
+				if(Respuesta.codMensaje==100)
 					window.location= window.location;
+                else if(Respuesta.codMensaje == 200)
+                    alert(Respuesta.Datos); 
 				
 			},"json");
 		});
 	});
 
 </script>
-    <?php
-//}
-    
-//else{
-
-  //   header("location: sinSesion.html");
-
-//}
-?>   
+   
 </body>
 </html>

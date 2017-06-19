@@ -10,19 +10,27 @@
 
 		<link rel="stylesheet" href="css/estilos_usuarios.css">
 		
+
 		<!--LIGA PARA JQUERY -->
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 		<script src="js/main.js" ></script>
 		
 
+
+		<!--LIGA PARA JQUERY -->
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+
 	</head>
 	<body>
+
 	
+
+
 	<?php
 		include("menu_pagina.html");
 	?>
 
-	
+
 		<form >
 			<h2>Borrar Usuario</h2>
 			<input type="text"  id="usuario" placeholder="Usuario">
