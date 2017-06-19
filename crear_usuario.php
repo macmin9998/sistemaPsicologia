@@ -10,19 +10,17 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/estilos_usuarios.css">
 
-
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-    <!--
-		<script src="javascript/main.js" ></script>
-		<script src="javascript/validaCrearUsuarios.js" ></script>
-	-->
+		<script src="js/main.js" ></script>
+
+
 	</head>
 	<body>
 		
-   <!--		<?php
-		// include("menu_pagina.html");
+   		<?php
+			include("menu_pagina.html");
 		?>
-    -->
+		
 
 		<form>
 			

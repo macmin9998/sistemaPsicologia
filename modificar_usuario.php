@@ -10,12 +10,12 @@
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/estilos_usuarios.css">
 
-		
-		<script src="javascript/main.js" ></script>
-		<script src="javascript/validaModificarUsuario.js" ></script>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script src="js/main.js" ></script>
 
 		 <!--LIGA PARA JQUERY -->
-		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		
          
         <script type="text/javascript">
 					$(document).ready(function(){
@@ -24,6 +24,7 @@
 								$('#claveN').hide(); 
 								$('#botonModificar').hide();
 								
+
 
 							$("#continuarB").on( "click", function() {
 								$('#usuario').show(); 
@@ -43,12 +44,13 @@
 	</head>
 	<body>
 
-<!--
+
+
 		<?php
-	//	include("menu_pagina.html");
+			include("menu_pagina.html");
 		?>
 
--->
+
 		<form >
 
 			<h2>Modificar Usuario</h2>
