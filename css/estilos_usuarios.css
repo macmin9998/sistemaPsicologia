@@ -1,6 +1,8 @@
 body{
-	background-image: url(fondo.jpg);
+	background-image: url(bt.png);
 	background-size: 100vw 100vh;
+	background-attachment: fixed;
+
 }
 
 form{
@@ -50,13 +52,13 @@ input
 	font-size: 17px;
 }
 
-#boton{
+form input[type='button']{
 	background: #3b5998;
 	color: #fff;
 	padding: 20px;
 }
 
-#boton:hover{
+form input[type='button']:hover{
 	cursor: pointer;
 }
 
