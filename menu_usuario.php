@@ -1,8 +1,10 @@
-<?php
-session_start();
 
-if(isset($_SESSION['sun'])){
+<!--<?php
+//session_start();
+
+//if(isset($_SESSION['sun'])){ 
 ?>
+-->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,7 +14,7 @@ if(isset($_SESSION['sun'])){
 		<link rel="stylesheet" href="css/estilos_menu_usuario.css">
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
-		<script src="javascript/menu_usuario.js" ></script>
+		<script src="js/menu_usuario.js" ></script>
 
 	</head>
 	<body>
@@ -25,7 +27,7 @@ if(isset($_SESSION['sun'])){
 			<li>
 				<div class="link"><i class="fa fa-file-text-o"></i>Examen<i class="fa fa-chevron-down"></i></div>
 					<ul class="submenu">
-						<li><a href="index1.php">Crear</a></li>
+						<li><a href="tipoExamen.php">Crear</a></li>
 						<li><a href="#">Eliminar</a></li>
 					</ul>
 			</li>
@@ -55,15 +57,15 @@ if(isset($_SESSION['sun'])){
 					</ul>
 			</li>
 		</ul>
+<!--		
 <?php
 
-}else{
-	echo"no hay sesion";
-}
+//}else{
+//	echo"no hay sesion";
+
 
 ?>
-
-
+-->
 
 	</body>
 
