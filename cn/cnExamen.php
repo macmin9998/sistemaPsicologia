@@ -34,9 +34,11 @@ class Examen extends Connection
                 
         return $resultados;    
 
+    }
 
-
-
+    public function getExamenCompleto()
+    {
+        
     }
 
     
