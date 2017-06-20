@@ -61,21 +61,21 @@
                 var tbody=$("#idRespuesta tbody");
 
                     if(Respuesta.Datos.length > 0){
-                        for(var i=1; i <= Respuesta.Datos.length ; i++){
-                            
+                        for(var i=0; i < Respuesta.Datos.length ; i++){
+                            var cont=i+1; 
                              
 
 
                             var tr= 
 
                             "<tr>"+
-                                "<td>"+i+".- "+
+                                "<td>"+cont+".- "+
                                     Respuesta.Datos[i].nombre+"</td>"+
                                 "<td> "+
                                     Respuesta.Datos[i].url+"</td>"+
                                 "<td><input type='radio' name='edad' id='edad2' value="+Respuesta.Datos[i].examenId+">"+" "+
-                                    i+ "</td>"+
-
+                                    cont+ "</td>"+
+                            
                              
 
 
@@ -83,7 +83,7 @@
                         
                             "</tr>";
                             tbody.append(tr);
-                           
+                            
 
                         }
 
