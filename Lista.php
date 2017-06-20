@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
 
 	<title>Examenes Creados</title>
-	
+	<link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilos_menu_pagina.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/estilos.css">
@@ -23,15 +23,13 @@
     ?>
     <div class="wrap_lista">
     	<h1>Examenes Creados</h1>
-
-    	<table width="100%" id="idRespuesta" class="table table-hover">
+        
+    	<table width="100%" id="idRespuesta" >
         <thead>
             <tr>
                 <th >Titulo</th>
                 <th >Liga</th>
-                <th>Entrar</th> 
-                
-                
+                <th>Entrar</th>    
             </tr>
         </thead>
         <tbody>
@@ -69,7 +67,10 @@
                             var tr= 
 
                             "<tr>"+
-                                "<td>"+cont+".- "+
+
+ 
+                                "<td class='margenTabla'>"+cont+".- "+
+
                                     Respuesta.Datos[i].nombre+"</td>"+
                                 "<td> "+
                                     Respuesta.Datos[i].url+"</td>"+

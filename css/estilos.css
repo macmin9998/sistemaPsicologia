@@ -159,6 +159,25 @@ body{
 
 }
 
+
+#idRespuesta th {
+  text-align: center;
+}
+
+#idRespuesta tr {
+  text-align: center;
+}
+
+#idRespuesta tr:hover{
+	background-color: rgba(151, 148, 147,0.3);
+}
+
+.margenTabla{
+	text-align: left;
+	padding-left: 150px;
+
+}
+
 h1{
 	margin-bottom: 20px;
 	font-size: 21px;
