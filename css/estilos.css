@@ -1,0 +1,218 @@
+
+/*Oculta formulario para presentar examen*/
+
+.hiden{
+display: none;
+}
+
+body{
+	background-image: url(bt.png);
+	background-size: 100vw 100vh;	
+	background-attachment: fixed;
+}
+
+/*estilo para pagina Lista.php*/
+.listaExamen{
+	color:rgb(3,7,96);
+	text-decoration: none;
+	font-weight: bold;
+}
+/*estilo para pagina Crea.php*/
+.formatoPreguntaRespuesta{
+	color:rgb(3,7,96);
+}
+
+.linkAgregarPregunta{
+	background: #3b5998;
+	width: 150px;
+	padding: 7px;
+	border-radius: 5px;
+	margin: auto;
+	text-align: center;
+	font-size: 16px;
+}
+
+.linkAgregarPregunta:hover{
+	transform: scale(0.95);
+}
+
+.linkAgregarPregunta a{
+	text-decoration: none;
+	color:#fff;
+}
+.fr{
+	float: right;
+}
+
+.fl{
+	float: right;
+}
+
+.cf{
+	clear: both;
+}
+
+.wrap{
+	padding: 25px;
+	margin: 0 auto;
+	width: 350px;
+	background: rgb(243,243,243);
+	border-radius: 5px;
+	margin-top: 70px;
+	border: 1px solid #000;
+}
+
+.wrap_lista{
+	padding: 25px;
+	margin: 0 auto;
+	width: 950px;
+	background: rgb(243,243,243);
+	border-radius: 5px;
+	margin-top: 70px;
+	border: 1px solid #000;
+}
+
+.wrap_agrega{
+	padding: 25px;
+	margin: 0 auto;
+	width: 520px;
+	background: rgb(255,255,255);
+	border-radius: 5px;
+	margin-top: 70px;
+	border: 1px solid #000;
+}
+
+.wrap_crea{
+	padding: 25px;
+	margin: 0 auto;
+	width: 800px;
+	background: rgba(243,243,243,0.5);
+	border-radius: 5px;
+	margin-top: 70px;
+	border: 1px solid #000;
+}
+
+.linkvolver{
+	background: #3b5998;
+	width: 60px;
+	padding: 5px;
+	border-radius: 5px;
+	margin: auto;
+	text-align: center;
+}
+
+.linkvolver:hover{
+	transform: scale(0.95);
+}
+
+.linkvolver a{
+	text-decoration: none;
+	color:#fff;
+}
+
+.tipoPregunta{
+  float:right;
+  margin-top: -80px;
+  margin-left: 20;
+
+	}
+
+.cantidadPreguntas{
+	align-items: center;
+	 float:right;
+  margin-right:24px; 
+
+	}
+
+
+.fl{
+	margin-bottom: 5px;
+}
+
+/*estilo para pagina generaCajas y sinSesion.hml*/
+.boton{
+	padding: 8px 16px;
+	background: #3b5998;
+	border: 0;
+	display: block;
+	font-weight: bold;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+}
+/*estilo para pagina generaCajas*/
+.boton:hover{
+	transform: scale(0.95);
+}
+/*estilo para sinSesion.html*/
+.noSesion{
+	width: 400px;
+	color: #fff;
+	text-align: center;
+	font-size: 25px;
+	background: rgba(85,85,85,0.3);
+	padding: 6px;
+	border-radius: 7px;
+	margin: auto;
+	margin-top: 60px;
+	border-radius: 20px;
+
+}
+
+h1{
+	margin-bottom: 20px;
+	font-size: 21px;
+	border-bottom: 1px solid #000;
+	padding-bottom: 15px;
+	text-align: center;
+	color: #3b5998;
+	font-weight: bold;
+}
+
+form > div{
+	margin-bottom: 20px;
+}
+form .titulo{
+	margin-right: 20px;
+
+}
+form label{
+	display: block;
+}
+form input[type='text'], select{
+	padding: 6px;
+	resize: none;
+	text-align: center;
+	border: 1px solid rgba(0,0,0,0.9);
+}
+form input[type="submit"]{
+	padding: 8px 16px;
+	background: #3b5998;
+	border: 0;
+	display: block;
+	font-weight: bold;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+}
+form input[type="submit"]:hover{
+	transform: scale(0.95);
+}
+ul{
+	margin-bottom: 25px;
+	list-style: none;
+}
+
+@media (max-width:480px){
+	.wrap{
+		width: 80%;
+	}
+}
+
+@media (max-width:768px){
+	.wrap_crea{
+		width: 80%;
+	}
+}
+
+
