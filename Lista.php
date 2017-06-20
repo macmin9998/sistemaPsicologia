@@ -21,7 +21,7 @@
     <?php
         //include("menu_pagina.html");
     ?>
-    <div class="wrap">
+    <div class="wrap_lista">
     	<h1>Examenes Creados</h1>
 
     	<table width="100%" id="idRespuesta" class="table table-hover">
@@ -39,9 +39,12 @@
         </tbody>
 
         </table>
-
-            <button id="hola">Entrar al Examen</button>
-
+            <br>
+            <br>
+            <br>
+            <center>
+                <button id="hola" class="boton">Entrar al Examen</button>
+            </center>
         </div>
        
         
