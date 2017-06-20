@@ -55,7 +55,7 @@ CREATE TABLE `examen` (
   `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `url` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`examenId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,6 +64,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
+INSERT INTO `examen` VALUES (4,'Prueba Psicologica','2017-06-19 10:04:21','www.examen.com'),(5,'prueba Examen','2017-06-19 10:56:50','879a1c1d0d8733dbd32fc8e99786f93f'),(6,'prueba uno','2017-06-19 10:59:21','c4463fe988eb7f57c30d35b91f126a51'),(7,'Examen Ingreso','2017-06-20 11:41:18','693375b88e11dd3a8fc24371361f4c3c'),(8,'Candidatos Prueba','2017-06-20 11:41:44','b5448615c76c7777d185972be4434c1d'),(9,'prueba Base','2017-06-20 11:43:02','34cba6287bdefcdaee636b28107d3ce9');
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +86,7 @@ CREATE TABLE `opciones` (
   KEY `examenId` (`examenId`),
   CONSTRAINT `opciones_ibfk_1` FOREIGN KEY (`preguntaId`) REFERENCES `preguntas` (`preguntaId`),
   CONSTRAINT `opciones_ibfk_2` FOREIGN KEY (`examenId`) REFERENCES `examen` (`examenId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +112,7 @@ CREATE TABLE `preguntas` (
   PRIMARY KEY (`preguntaId`),
   KEY `examenId` (`examenId`),
   CONSTRAINT `examenId` FOREIGN KEY (`examenId`) REFERENCES `examen` (`examenId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -135,7 +136,7 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(20) NOT NULL,
   `clave` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +145,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,'mac@gmail.com','123');
+INSERT INTO `usuarios` VALUES (10,'mac@gmail.com','123'),(12,'hola@gmail.com','123');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -157,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-13 14:15:45
+-- Dump completed on 2017-06-20 11:44:28
