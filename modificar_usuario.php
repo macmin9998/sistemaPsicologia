@@ -47,7 +47,7 @@
 
 
 		<?php
-			include("menu_pagina.html");
+			include("inc/menu_pagina.html");
 		?>
 
 

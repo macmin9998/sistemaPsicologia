@@ -15,11 +15,6 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 		<script src="js/main.js" ></script>
 		
-
-
-		<!--LIGA PARA JQUERY -->
-		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-
 	</head>
 	<body>
 
@@ -27,7 +22,7 @@
 
 
 	<?php
-		include("menu_pagina.html");
+		include("inc/menu_pagina.html");
 	?>
 
 

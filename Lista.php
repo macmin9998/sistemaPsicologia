@@ -19,7 +19,7 @@
 
 
     <?php
-        //include("menu_pagina.html");
+        include("inc/menu_pagina.html");
     ?>
     <div class="wrap_lista">
     	<h1>Examenes Creados</h1>
@@ -118,6 +118,7 @@
 
 
         </script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+    <script src="js/menu_usuario.js" ></script>
 </body>
 </html>

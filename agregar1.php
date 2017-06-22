@@ -99,7 +99,7 @@ if(isset($_POST['enviar'])){
 
 <body>
 <?php
-        include("menu_pagina.html");
+        include("inc/menu_pagina.html");
     ?>
 
 <?php

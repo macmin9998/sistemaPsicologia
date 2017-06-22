@@ -19,15 +19,13 @@ $id = $_GET['id'];
 	<link rel="stylesheet" href="css/estilos.css">
 
 	<script src="js/jquery-3.2.1.js"></script>
-
-    <script src="javascript/main.js" ></script>
 	
 </head>
 <body>
     <input type="hidden" id="idOculto" value="<?php echo $id; ?>">
 
 	<?php
-       // include("menu_pagina.html");
+       include("inc/menu_pagina.html");
     ?>
 
     <div class="wrap_crea">
@@ -35,9 +33,11 @@ $id = $_GET['id'];
     	
         <div id="nombreDiv2">
             
-            
-        
+          
         </div>
+          <center>
+                <button class="boton">Agregar Pregunta</button>
+            </center>
     
 
     <script type="text/javascript">
@@ -139,5 +139,6 @@ $id = $_GET['id'];
 
 
     </script>
+    <script src="js/main.js" ></script>
 </body>
 </html>
