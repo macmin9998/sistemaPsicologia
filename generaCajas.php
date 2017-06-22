@@ -3,24 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<title>Genera cajas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_menu_pagina.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
-	<form>
-		<label>Escribe aqui las	instrucciones:</label> <input type="text"  id="txtInstruccion" placeholder="instrucciones"></form><br>
-		<label>Cuantas cajas requiere? </label><select id="cmbCaja"  onchange="createTexts(this)">
-		<option value="" selected="selected">          </option>
-        <?php
-        for($i=2; $i<=15;$i++){
-        echo "<option value='$i'>$i</option>";
-        }
-        ?> 
-    </select><br>
-    <div></div><br>
-    <button type="button"  id="btnGuardar">Guardar</button><br>
-  <!-- <button type="button"  id="btnAgregar">Agregar serie de cajas</button>-->
-    </form>
+    <?php
+        include("inc/menu_pagina.html");
+    ?>
 
+    <center>
+	    <form class="wrap">
+		    <label>Escribe aqui las	instrucciones:</label><br><input type="text"  id="txtInstruccion" placeholder="instrucciones"><br><br>
+		    <label>Cuantas cajas requiere? </label><br><select id="cmbCaja"  onchange="createTexts(this)">
+		    <option value="" selected="selected">          </option>
+            <?php
+                for($i=2; $i<=15;$i++){
+                    echo "<option value='$i'>$i</option>";
+                }
+            ?> 
+            </select><br>
+            <div></div><br>
+            <button type="button"  id="btnGuardar" class="boton">Guardar</button><br>
+        <!-- <button type="button"  id="btnAgregar">Agregar serie de cajas</button>-->
+        </form>
+    </center>
     <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
+    <script src="js/main.js" ></script>
+
     <script type="text/javascript">
         idtxt=0;
         function createTexts(sel) {
