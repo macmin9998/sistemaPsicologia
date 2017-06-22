@@ -36,9 +36,41 @@ class Examen extends Connection
 
     }
 
-    public function getExamenCompleto()
+    public function getExamenCompleto($id)
+    {
+        $this->setQuery("select nombre from examen where examenId=$id ");
+        $this->Ejecutar();
+        
+        $resultados=[];
+        while($row = $this-> getResult() -> fetch_array() )
+         
+            $resultados[] = $row;
+
+                
+        return $resultados;  
+
+    }
+
+    public function getPreguntasRespuestas($id)
     {
         
+        $this->setQuery("select p.titulo, o.nombreO, o.tipo from question p join opciones o on p.id=o.preguntaId join examen e where e.examenId=$id");
+       
+       $this-> Ejecutar();
+
+        $resultados=[];
+
+        while($row = $this-> getResult() -> fetch_array() ){
+         
+           
+            $resultados[] = $row;
+        }
+
+                
+        return $resultados; 
+
+
+    
     }
 
     
