@@ -99,7 +99,11 @@ if(isset($_POST['enviar'])){
 
 <body>
 <?php
+<<<<<<< HEAD
        // include("menu_pagina.html");
+=======
+        include("inc/menu_pagina.html");
+>>>>>>> dd54b5339b08f4c17074342410614e1064501f73
     ?>
 
 <?php

@@ -16,13 +16,12 @@
     <script src="js/main.js" ></script>
     
     <script src="validacionJs/index.js" ></script> 
-    <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
    
 </head>
 <body>
 
     <?php 
-        include("menu_pagina.html");
+        include("inc/menu_pagina.html");
     ?>
 
 
