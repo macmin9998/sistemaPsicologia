@@ -97,12 +97,12 @@
 
             	alert("si intenta guardar");
 
-            	var cajaExamen = $("#nombreId").val();
+            	
 			
 				$.post('',
 				{
 					WS:"guardarPregunta",
-					examen:cajaExamen
+					
 
 				},function(Respuesta){
 

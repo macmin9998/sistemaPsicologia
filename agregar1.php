@@ -2,10 +2,10 @@
 //session_start();
 //if(isset($_SESSION['sun'])){
 
-include "includs/conexion.php";
+//include "includs/conexion.php";
 
 
-$id = $_GET['id'];
+$id = 1;
 $cont = 0;
 $errors = array();
 $validacion="";
@@ -99,7 +99,7 @@ if(isset($_POST['enviar'])){
 
 <body>
 <?php
-        include("menu_pagina.html");
+       // include("menu_pagina.html");
     ?>
 
 <?php
