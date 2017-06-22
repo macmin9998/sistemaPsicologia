@@ -28,7 +28,7 @@ CREATE TABLE `examen` (
   `url` varchar(100) DEFAULT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`examenId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (1,'examen Psicologico','bdae4a62967110c68ece86752c6586fa','2017-06-21 18:54:50'),(2,'prueba UNO','287bfc2bf0be44097c16eb7dd6ced578','2017-06-21 18:54:57'),(3,'prueba candidatos','b9f5177205a2a1b63c404ff0107191a8','2017-06-21 18:55:06'),(4,'examen de new','9711717c22d12ba4981cdbcbfe4a0a22','2017-06-21 18:55:13');
+INSERT INTO `examen` VALUES (1,'examen Psicologico','bdae4a62967110c68ece86752c6586fa','2017-06-21 18:54:50'),(2,'prueba UNO','287bfc2bf0be44097c16eb7dd6ced578','2017-06-21 18:54:57'),(3,'prueba candidatos','b9f5177205a2a1b63c404ff0107191a8','2017-06-21 18:55:06'),(4,'examen de new','9711717c22d12ba4981cdbcbfe4a0a22','2017-06-21 18:55:13'),(5,'prueba nueva','ff90936b1ee71e3f86197613179c4fd9','2017-06-22 14:46:32');
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +109,7 @@ CREATE TABLE `usuarios` (
   `usuario` varchar(100) DEFAULT NULL,
   `clave` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,6 +118,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'mac@gmail.com','123');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -130,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-21 15:01:15
+-- Dump completed on 2017-06-22 10:53:11
