@@ -5,6 +5,11 @@
 	
 	font-family: sans-serif;
 }
+body{
+	background-image: url(bt.png); 
+	background-size: 100vw 100vh;
+	background-attachment: fixed;
+}
 
 header{
 	width: 100%

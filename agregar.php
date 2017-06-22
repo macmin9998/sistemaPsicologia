@@ -2,25 +2,33 @@
 <html>
 <head>
 	<title>.::Prueba </title>
-
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/estilos_menu_pagina.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/main.js" ></script>
 
 </head>
 <body>
-
-	<input type="text" id="txtPregunta" placeholder="Escriba su pregunta">
-	<select id="selectId">
-		 <option value="" disabled selected>Numero de Opciones</option>
+	<?php
+		include("inc/menu_pagina.html");
+	?>
+	<form class="wrap">
+		<input type="text" id="txtPregunta" placeholder="Escriba su pregunta">
+		<select id="selectId">
+			<option value="" disabled selected>Numero de Opciones</option>
+		</select>
+		<br/>
+		<center>
+			<div id="contenido">
 		
-	</select>
-	<br/>
-	<div id="contenido">
+			</div>
+			<br>
+			<br>
+			<button id="hola" class="boton">hey</button>
+		</center>
+	</form>
 		
-	</div>
-
-	<button id="hola">hey</button>
-
-
     
 
 
