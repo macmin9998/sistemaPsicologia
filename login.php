@@ -37,7 +37,8 @@
 						 				
 						 				alert(Respuesta.Mensaje);
 										if(Respuesta.codMensaje == 100)
-												window.location =window.location;
+												
+												window.location.href = "menu_usuario.php";
 										else if(Respuesta.codMensaje == 200){
 											
 										    alert(Respuesta.Datos);	
