@@ -8,10 +8,16 @@
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   		<link rel="stylesheet" href="/resources/demos/style.css">
 
+  		<link rel="stylesheet" href="css/estilos_menu_pagina.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
   		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>
 	<body>
+	<?php
+        include("inc/menu_pagina.html");
+    ?>
 		<form class="opcionesExamen">
 			<h1>Tipo de examen a crear</h1>
 		</form>
@@ -108,5 +114,8 @@
 				</div>
 			</div>
 		</div>
+		<script src="js/jquery-3.2.1.js"></script>
+    	<script src="js/main.js" ></script>
+
 	</body>
 </html>
