@@ -83,6 +83,49 @@ class WsExamen
 
                 break;
 
+            case 'getMuestra':
+
+                $id = $this-> getPOST("id");
+
+                $muestra = $this-> Examenes -> getExamenCompleto($id);
+
+                $respuesta=[];
+
+               if($muestra){
+                $respuesta= array("Mensaje" => "Examen  encontrado",
+                                "codMensaje" => 100,
+                                "Datos" => $muestra);
+
+                echo json_encode($respuesta);
+                }else{
+                    $respuesta= array("Mensaje" => "Titulo de examen no encontrado",
+                                "codMensaje" => 200,
+                                "Datos" => []);
+                echo json_encode($respuesta);
+                } 
+
+                break;
+
+            case 'muestraContenido':
+                $id = $this-> getPOST("id");
+                $ver= $this-> Examenes -> getPreguntasRespuestas($id);
+                $respuesta=[];
+                
+                if($ver){
+                $respuesta= array("Mensaje" => "Contenido encontrado",
+                                "codMensaje" => 100,
+                                "Datos" => $ver);
+
+                echo json_encode($respuesta);
+                }else{
+                    $respuesta= array("Mensaje" => "Contenido no encontrado",
+                                "codMensaje" => 200,
+                                "Datos" => []);
+                echo json_encode($respuesta);
+                } 
+
+                break; 
+
            
         	case 'N0':
 

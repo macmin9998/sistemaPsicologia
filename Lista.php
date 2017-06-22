@@ -102,10 +102,10 @@
         $(document).ready(function(){
         
             $("#hola").click(function () {  
-                    alert($('input:radio[name=edad]:checked').val());
+                    
                     var id= $('input:radio[name=edad]:checked').val();
 
-                    document.location.href = "probarId.php?id=" + id;
+                    document.location.href = "crea.php?id=" + id;
            
             });
         });

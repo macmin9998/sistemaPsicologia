@@ -16,33 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cajas`
---
-
-DROP TABLE IF EXISTS `cajas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cajas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `instrucciones` text,
-  `texto_caja` text,
-  `id_exam` int(11) DEFAULT NULL,
-  `grupo_cajas` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cajas`
---
-
-LOCK TABLES `cajas` WRITE;
-/*!40000 ALTER TABLE `cajas` DISABLE KEYS */;
-INSERT INTO `cajas` VALUES (1,'ordenar de mayor a menor','1',1,NULL),(2,'ordenar de mayor a menor','2',1,NULL),(3,'ordenar de mayor a menor','3',1,NULL),(4,'ordenar de mayor a menor','4',1,NULL);
-/*!40000 ALTER TABLE `cajas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `examen`
 --
 
@@ -52,10 +25,10 @@ DROP TABLE IF EXISTS `examen`;
 CREATE TABLE `examen` (
   `examenId` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) DEFAULT NULL,
-  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `url` varchar(100) DEFAULT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`examenId`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +37,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (4,'Prueba Psicologica','2017-06-19 10:04:21','www.examen.com'),(5,'prueba Examen','2017-06-19 10:56:50','879a1c1d0d8733dbd32fc8e99786f93f'),(6,'prueba uno','2017-06-19 10:59:21','c4463fe988eb7f57c30d35b91f126a51'),(7,'Examen Ingreso','2017-06-20 11:41:18','693375b88e11dd3a8fc24371361f4c3c'),(8,'Candidatos Prueba','2017-06-20 11:41:44','b5448615c76c7777d185972be4434c1d'),(9,'prueba Base','2017-06-20 11:43:02','34cba6287bdefcdaee636b28107d3ce9');
+INSERT INTO `examen` VALUES (1,'examen Psicologico','bdae4a62967110c68ece86752c6586fa','2017-06-21 18:54:50'),(2,'prueba UNO','287bfc2bf0be44097c16eb7dd6ced578','2017-06-21 18:54:57'),(3,'prueba candidatos','b9f5177205a2a1b63c404ff0107191a8','2017-06-21 18:55:06'),(4,'examen de new','9711717c22d12ba4981cdbcbfe4a0a22','2017-06-21 18:55:13');
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,16 +50,14 @@ DROP TABLE IF EXISTS `opciones`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `opciones` (
   `opcionId` int(11) NOT NULL AUTO_INCREMENT,
-  `preguntaId` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `valor` int(11) NOT NULL,
-  `examenId` int(11) DEFAULT NULL,
+  `nombreO` varchar(100) DEFAULT NULL,
+  `tipo` int(11) DEFAULT NULL,
+  `valor` int(11) DEFAULT NULL,
+  `preguntaId` int(11) DEFAULT NULL,
   PRIMARY KEY (`opcionId`),
-  KEY `preguntaId` (`preguntaId`),
-  KEY `examenId` (`examenId`),
-  CONSTRAINT `opciones_ibfk_1` FOREIGN KEY (`preguntaId`) REFERENCES `preguntas` (`preguntaId`),
-  CONSTRAINT `opciones_ibfk_2` FOREIGN KEY (`examenId`) REFERENCES `examen` (`examenId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `opciones_question` (`preguntaId`),
+  CONSTRAINT `opciones_question` FOREIGN KEY (`preguntaId`) REFERENCES `question` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,33 +66,35 @@ CREATE TABLE `opciones` (
 
 LOCK TABLES `opciones` WRITE;
 /*!40000 ALTER TABLE `opciones` DISABLE KEYS */;
+INSERT INTO `opciones` VALUES (1,'OpcionUno',1,0,1),(2,'OpcionDos',1,0,1),(3,'OpcionTres',1,0,1);
 /*!40000 ALTER TABLE `opciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `preguntas`
+-- Table structure for table `question`
 --
 
-DROP TABLE IF EXISTS `preguntas`;
+DROP TABLE IF EXISTS `question`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `preguntas` (
-  `preguntaId` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(50) NOT NULL,
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` text,
   `examenId` int(11) DEFAULT NULL,
-  PRIMARY KEY (`preguntaId`),
-  KEY `examenId` (`examenId`),
-  CONSTRAINT `examenId` FOREIGN KEY (`examenId`) REFERENCES `examen` (`examenId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `question_examen` (`examenId`),
+  CONSTRAINT `question_examen` FOREIGN KEY (`examenId`) REFERENCES `examen` (`examenId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `preguntas`
+-- Dumping data for table `question`
 --
 
-LOCK TABLES `preguntas` WRITE;
-/*!40000 ALTER TABLE `preguntas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `preguntas` ENABLE KEYS */;
+LOCK TABLES `question` WRITE;
+/*!40000 ALTER TABLE `question` DISABLE KEYS */;
+INSERT INTO `question` VALUES (1,'pregunta nueva',1),(2,'preguntaDos',1);
+/*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -133,10 +106,10 @@ DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(20) NOT NULL,
-  `clave` varchar(20) NOT NULL,
+  `usuario` varchar(100) DEFAULT NULL,
+  `clave` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +118,6 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (10,'mac@gmail.com','123'),(12,'hola@gmail.com','123');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-20 11:44:28
+-- Dump completed on 2017-06-21 15:01:15

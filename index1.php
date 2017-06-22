@@ -56,7 +56,7 @@
 
 				alert(Respuesta.Mensaje);
 				if(Respuesta.codMensaje==100)
-					window.location= window.location;
+					window.location.href = "Lista.php";
                 else if(Respuesta.codMensaje == 200)
                     alert(Respuesta.Datos); 
 				
