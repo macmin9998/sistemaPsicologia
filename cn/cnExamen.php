@@ -54,9 +54,11 @@ class Examen extends Connection
     public function getPreguntasRespuestas($id)
     {
         
-        $this->setQuery("select p.titulo, o.nombreO, o.tipo from question p join opciones o on p.id=o.preguntaId join examen e where e.examenId=$id");
+        $this->setQuery(" select p.titulo, o.nombreO, o.tipo from question p join opciones o on p.id=o.preguntaId join examen e where p.examenId=$id and e.examenId=$id");
+
+
        
-       $this-> Ejecutar();
+        $this-> Ejecutar();
 
         $resultados=[];
 
