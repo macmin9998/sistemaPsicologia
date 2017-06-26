@@ -2,22 +2,23 @@
 <html>
 <head>
 	<title>.::Prueba </title>
-	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="stylesheet" href="css/estilos_menu_pagina.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	
+	
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main.js" ></script>
 
 </head>
 <body>
 	<?php
-		include("inc/menu_pagina.html");
+		//include("inc/menu_pagina.html");
 	?>
-	<form class="wrap">
+	
 		<input type="text" id="txtPregunta" placeholder="Escriba su pregunta">
+		<!--
 		<select id="selectId">
 			<option value="" disabled selected>Numero de Opciones</option>
 		</select>
+		-->
 		<br/>
 		<center>
 			<div id="contenido">
@@ -25,9 +26,12 @@
 			</div>
 			<br>
 			<br>
-			<button id="hola" class="boton">hey</button>
+			<button id="addO">agregar opciones</button>
+			<button id="hola" class="boton">guardar </button>
 		</center>
-	</form>
+	
+
+	<button id="hola1">ver contenido</button>
 		
     
 
@@ -49,7 +53,7 @@
      
     }
 
-
+        /*
 		$(document).ready(function() {
             
             var selectAdd = $("#selectId");
@@ -69,10 +73,9 @@
  
         
 
-        });
-
-
-        $(document).ready(function(){
+        });   */
+ 
+       /* $(document).ready(function(){
 
             var conten = $("#contenido");
 
@@ -86,30 +89,83 @@
       
       				for(var i=1; i <= valor; i++){
                         
-		            	conten.append("<br><input type='text' id='opcion"+i+"' placeholder='Opcion "+i+"'><br>");
+		            	conten.append("<br><input type='text' id='opcion"+i+"' name='name"+i+"' placeholder='Opcion "+i+"'><br>");
 
 		            }
             ver();
             
 			});
 			
+		});*/
+
+
+		 $(document).ready(function(){
+
+            var conten = $("#contenido");
+            var cont=1;
+			
+			$("#addO").click(function (){
+
+				   
+        
+                        
+		            	conten.append("<br><input type='text' id='opcion"+cont+"' name='name"+cont+"' placeholder='Opcion "+cont+"'><br>");
+            cont++;
+		            
+          
+            
+			});
+			
 		});
 
+  
+  		$(document).ready(function(){
+            var cont=1;
+
+  			 $("#hola1").click(function (){
+
+  			 	alert("mostrar contenido");
+                var mac = $('input:text[name=name'+cont+']').val();
+                alert(mac);
+                cont++;
+
+
+        	});
+  		
+
+
+  		});
+        
+         function lleva (){
+    	     
+            var cont=1;
+            var mac = $('input:text[name=name'+cont+']').val();
+
+            cont++;
+
+             return mac;
+
+        }
+
+
+		
 
 
 
 
+    
      $(function(){
         
-            $("#hola").click(function (){
+            $("#addO").click(function (){
 
-            	alert("si intenta guardar");
-
+            	
+                var cajaOpcion=lleva();
             	
 			
 				$.post('',
 				{
 					WS:"guardarPregunta",
+					opcion:cajaOpcion
 					
 
 				},function(Respuesta){
@@ -129,7 +185,7 @@
        });
 
 
-
+     
         
 
 
