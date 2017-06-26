@@ -38,7 +38,7 @@
 						<br>
 						<br>
 						<center>
-							<button id="examenRadio" name="examenRadio" value="1">Crear examen</button>
+							<button id="examenRadio" name="tipo" value="1">Crear examen</button>
 						</center>
 					</form>
         		</div>
@@ -56,7 +56,7 @@
 						<br>
 						<br>
 						<center>
-							<button>Crear examen</button>
+							<button name="tipo" value="2">Crear examen</button>
 						</center>
 					</form>
         		</div>
@@ -72,10 +72,10 @@
 						Ejemplo: Escribe tu respuesta
 						<br>
 						<br>
-						<input type="text" name="text">
+						<input type="text" >
 						<center>
 							<br>
-							<button>Crear examen</button>
+							<button name="tipo" value="3"> Crear examen </button>
 						</center>
 					</form>
 				</div>

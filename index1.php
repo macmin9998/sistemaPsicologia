@@ -1,3 +1,11 @@
+<?php
+
+
+$tipo =$_GET["tipo"];
+
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -31,6 +39,8 @@
     		<form >
     		
     			<h1>Nuevo Examen</h1>
+
+                <input type="hidden" id="tipoExamen" value="<?php echo $tipo ?>">
     	
     			<input type="text"  id="nombreId" placeholder="Titulo del Examen"><br><br>
     	
@@ -45,11 +55,13 @@
 	$(function(){
 			$("#crearExamenBtn").click(function(){
 				var cajaExamen = $("#nombreId").val();
+                var cajaTipo = $("#tipoExamen").val();
 			
 			$.post('ws/WsExamen.php',
 			{
 				WS:"addExamen",
-				examen:cajaExamen
+				examen:cajaExamen,
+                tipoE:cajaTipo
 
 			},function(Respuesta){
 
