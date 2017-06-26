@@ -86,7 +86,7 @@ body{
 	padding: 25px;
 	margin: 0 auto;
 	width: 800px;
-	background: rgba(243,243,243,0.5);
+	background: rgb(243,243,243);
 	border-radius: 5px;
 	margin-top: 70px;
 	border: 1px solid #000;
@@ -140,6 +140,7 @@ body{
 	border-radius: 6px;
 	cursor: pointer;
 }
+
 /*estilo para pagina generaCajas*/
 .boton:hover{
 	transform: scale(0.95);

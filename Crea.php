@@ -16,7 +16,9 @@ $id = $_GET['id'];
 
 	<link rel="stylesheet" href="css/estilos_menu_pagina.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/estilosInstrucciones.css">
 	<link rel="stylesheet" href="css/estilos.css">
+    
 
 	<script src="js/jquery-3.2.1.js"></script>
 	
@@ -26,8 +28,11 @@ $id = $_GET['id'];
 
 	<?php
        include("inc/menu_pagina.html");
+       echo "<br>";
+       include("inc/ventanaInstrucciones.html");
     ?>
-
+    <br>
+    <br>
     <div class="wrap_crea">
     	<h1>Crea preguntas del examen: <div id="nombreDiv"> </div> </h1>
     	
