@@ -27,8 +27,9 @@ CREATE TABLE `examen` (
   `nombre` varchar(100) DEFAULT NULL,
   `url` varchar(100) DEFAULT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tipoExamen` int(11) DEFAULT NULL,
   PRIMARY KEY (`examenId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (1,'examen Psicologico','bdae4a62967110c68ece86752c6586fa','2017-06-21 18:54:50'),(2,'prueba UNO','287bfc2bf0be44097c16eb7dd6ced578','2017-06-21 18:54:57'),(3,'prueba candidatos','b9f5177205a2a1b63c404ff0107191a8','2017-06-21 18:55:06'),(4,'examen de new','9711717c22d12ba4981cdbcbfe4a0a22','2017-06-21 18:55:13'),(5,'prueba nueva','ff90936b1ee71e3f86197613179c4fd9','2017-06-22 14:46:32');
+INSERT INTO `examen` VALUES (1,'examen Psicologico','bdae4a62967110c68ece86752c6586fa','2017-06-26 17:23:18',1),(2,'prueba UNO','287bfc2bf0be44097c16eb7dd6ced578','2017-06-26 17:23:18',1),(3,'prueba candidatos','b9f5177205a2a1b63c404ff0107191a8','2017-06-26 17:23:18',1),(4,'examen de new','9711717c22d12ba4981cdbcbfe4a0a22','2017-06-26 17:23:18',1),(5,'prueba nueva','ff90936b1ee71e3f86197613179c4fd9','2017-06-26 17:23:18',1),(6,'examen1','eeab03e3e9bbf0d660a5ad3af075dd18','2017-06-26 17:23:18',1),(7,'nuevo examen ','e15d4a747d17d2ec3b2b992b4a25ea13','2017-06-26 17:23:18',1),(8,'examen nuevo10','f39aaf7f0d83c5c00af5d5c5a1d8dce9','2017-06-26 17:23:18',1),(10,'examen segunda generacion','2713a0bb9bde51fdb7dd801587dc2705','2017-06-26 18:01:35',1);
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,6 +69,34 @@ LOCK TABLES `opciones` WRITE;
 /*!40000 ALTER TABLE `opciones` DISABLE KEYS */;
 INSERT INTO `opciones` VALUES (1,'OpcionUno',1,0,1),(2,'OpcionDos',1,0,1),(3,'OpcionTres',1,0,1);
 /*!40000 ALTER TABLE `opciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `participante`
+--
+
+DROP TABLE IF EXISTS `participante`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `participante` (
+  `id_participante` int(11) NOT NULL AUTO_INCREMENT,
+  `sexo` varchar(100) DEFAULT NULL,
+  `edad` int(11) DEFAULT NULL,
+  `escolaridad` varchar(100) DEFAULT NULL,
+  `ciudad` varchar(100) DEFAULT NULL,
+  `examenId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_participante`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `participante`
+--
+
+LOCK TABLES `participante` WRITE;
+/*!40000 ALTER TABLE `participante` DISABLE KEYS */;
+INSERT INTO `participante` VALUES (1,'masculino',23,'EducaciÃ³n Superior','Mexico',10),(2,'masculino',14,'Secuandaria','cdmx',1);
+/*!40000 ALTER TABLE `participante` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -131,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-22 10:53:11
+-- Dump completed on 2017-06-26 13:14:50

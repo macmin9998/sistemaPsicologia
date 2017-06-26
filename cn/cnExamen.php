@@ -11,10 +11,10 @@ class Examen extends Connection
 	}
 
 	
-	public function addExamen($examenNombre,$url)
+	public function addExamen($examenNombre,$url,$tipoExamen)
 	{
         
-        $this->setQuery("insert into examen(nombre,url) values('$examenNombre','$url') ");
+        $this->setQuery("insert into examen(nombre,url,tipoExamen) values('$examenNombre','$url',$tipoExamen) ");
     	$this->Ejecutar();
        
 	    return $this-> getIsCorrect();

@@ -20,17 +20,21 @@ class WsExamen
 
              
                 $examenNombre = $this-> getPOST("examen");
+                $tipoExamen = $this-> getPOST("tipoE");
+
                 $errors = array();
 
                 if(empty($examenNombre) )
                      $errors[]= "falta llenar el campo titulo ";
+                 if(empty($tipoExamen) )
+                    $errors[]= "Examen no seleccionado";
                 
                 
                 if(count($errors) == 0  ){
 
                     $url = md5($examenNombre);
                         
-                    $inserta = $this -> Examenes -> addExamen($examenNombre,$url); 
+                    $inserta = $this -> Examenes -> addExamen($examenNombre,$url,$tipoExamen); 
                     
                     $respuesta=[];
                     if($inserta){
