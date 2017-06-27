@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -9,19 +6,11 @@
 
 	<title>Sistema de encuestas</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="css/estilosExamenes.css">
      <script src="js/autocompletar.js"></script>
-
-      
-
-
-
-
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	
 </head>
     <body>
-         <div class="wrap_crea contenedor" id="elemento">
+         <div class="wrap" id="elemento">
 
             <table>
 
@@ -61,7 +50,7 @@
                         <input id="txtCiudad" class="ui-autocomplete-input" placeholder="Ciudad">
                     </div>
                     <br>
-                    <button type="button" id="boton" name="boton">Iniciar Examen</button>
+                    <button type="button" class="boton" id="boton" name="boton">Iniciar Examen</button>
                 </center>
                 <tr>
                     
