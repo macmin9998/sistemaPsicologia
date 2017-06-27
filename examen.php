@@ -6,30 +6,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
-
+    <link rel="stylesheet" href="css/estilosExamenes.css">
 	<title>Sistema de encuestas</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
-    <link rel="stylesheet" href="../css/style2.css">
-     <script src="js/autocompletar.js"></script>
-
-      
-
-
-
+    <script src="js/autocompletar.js"></script>
+    <script src="js/mostrarExamen.js"></script>
 
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	
 </head>
     <body>
-         <div class="wrap_crea contenedor" id="elemento">
+        <header>
+            <h1>REGISTRO</h1>
+        </header>
+         <div class="registro" id="elemento">
 
             <table>
 
                <center>
-
-                    <br>
-                            <br>
-                           
                             <input type="hidden" value="<?php echo $_GET['id']?>" name="Id" id="txtexamenId" size='3' placeholder="Id Examen">
                     <br>
                     
@@ -62,7 +56,7 @@
                         <input id="txtCiudad" class="ui-autocomplete-input" placeholder="Ciudad">
                     </div>
                     <br>
-                    <button type="button" id="boton" name="boton">Iniciar Examen</button>
+                    <button type="button" class="boton" id="boton" name="boton" onclick="mostrar()">Iniciar Examen</button>
                 </center>
                 <tr>
                     
@@ -70,7 +64,7 @@
     	
 	</div>
 
-    <div id="examen">
+    <div id="examen" class="examen">
 
 
         
@@ -172,12 +166,12 @@
                         if(pregunta != pActual){
                             cont++;
                             
-                            label = "<label>"+cont+".- "+pregunta+"<label><br>";
+                            label = "<center><label>"+cont+".- "+pregunta+"<label></center><br>";
                            
                             pActual=pregunta; 
                          }  
                      
-                         input = "<input type='radio' name='rad"+cont+"' value='"+valorR+"'  "+">"+nombreR+"<br>";
+                         input = "<span><input type='radio' name='rad"+cont+"' value='"+valorR+"'  "+">"+nombreR+"</span>";
                         // input2 = "<input type='text' name='id"+cont+"' value='"+idP+"'  "+"><br>";
 
                           
