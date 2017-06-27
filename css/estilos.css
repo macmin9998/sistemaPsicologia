@@ -11,6 +11,16 @@ body{
 	background-attachment: fixed;
 }
 
+h1{
+	margin-bottom: 20px;
+	font-size: 21px;
+	border-bottom: 1px solid #000;
+	padding-bottom: 15px;
+	text-align: center;
+	color: #3b5998;
+	font-weight: bold;
+}
+
 /*estilo para pagina Lista.php*/
 .listaExamen{
 	color:rgb(3,7,96);
@@ -65,7 +75,7 @@ body{
 .wrap_lista{
 	padding: 25px;
 	margin: 0 auto;
-	width: 950px;
+	width: 90%;
 	background: rgb(243,243,243);
 	border-radius: 5px;
 	margin-top: 70px;
@@ -130,6 +140,9 @@ body{
 }
 
 /*estilo para pagina generaCajas y sinSesion.hml*/
+
+
+
 .boton{
 	padding: 8px 16px;
 	background: #3b5998;
@@ -178,16 +191,29 @@ body{
 	padding-left: 150px;
 
 }
+/*Estilos para tablas*/
 
-h1{
-	margin-bottom: 20px;
-	font-size: 21px;
-	border-bottom: 1px solid #000;
-	padding-bottom: 15px;
-	text-align: center;
-	color: #3b5998;
-	font-weight: bold;
+.tabla{
+	padding: 25px;
+	margin: 0 auto;
+	width: 80%;
+	background: rgb(243,243,243);
+	border-radius: 5px;
+	margin-top: 70px;
+	border: 1px solid #000;
 }
+
+.tabla tr{
+	text-align: center;
+}
+
+.tabla tr:hover{
+	background-color: rgba(151, 148, 147,0.3);
+}
+
+
+
+
 
 form > div{
 	margin-bottom: 20px;
@@ -234,5 +260,4 @@ ul{
 		width: 80%;
 	}
 }
-
 
