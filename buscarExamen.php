@@ -7,17 +7,22 @@ session_start();
 <html>
 <head>
 	<title>Buscar Examen</title>
-
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
 	<script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
-    <link rel="stylesheet" href="../css/style2.css">
+    <script src="js/main.js" ></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_menu_pagina.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
 <body>
-
+    <?php
+        include("inc/menu_pagina.html");
+    ?>
     
 
 
-	
-    <div>
+	<form>
+    <div class="tabla">
         <table id="tblRespuesta" border="1" width="100%">
             
             <h1 align="center">Examen Radio Boton</h1>
@@ -36,10 +41,10 @@ session_start();
 
 
     </div>
-
+</form>
 
     
-    <div>
+    <div class="tabla">
         <table id="tblRespuesta1" border="1" width="100%">
             
             <h1 align="center">Examen Pregunta Abierta</h1>
@@ -59,10 +64,10 @@ session_start();
 
     </div>
 
-    <div>
-        <table id="tblRespuesta2" border="1" width="100%">
+    <div class="tabla">
+        <table id="tblRespuesta2" border="1" width="100%" >
             
-            <h1 align="center">Examen Pregunta Seleccion</h1>
+            <h1 align="center" >Examen Pregunta Seleccion</h1>
             <tr>
                 <th>Nombre de Examen</th>
                 <th>URL</th>
