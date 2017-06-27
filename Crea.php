@@ -41,12 +41,28 @@ $id = $_GET['id'];
           
         </div>
           <center>
-                <button class="boton">Agregar Pregunta</button>
+                <button class="boton" id="preguntaNueva" >Agregar Pregunta</button>
             </center>
+
+
     
 
     <script type="text/javascript">
-         $(document).ready(function(){
+        
+
+           $(document).ready(function(){
+
+
+            $('#preguntaNueva').click(function (){
+
+                window.location.href = "add.php?id="+$("#idOculto").val()+ ""; 
+
+
+            });
+
+           });
+
+        $(document).ready(function(){
 
             var cajaId = $("#idOculto").val();
 

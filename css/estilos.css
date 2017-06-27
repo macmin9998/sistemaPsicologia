@@ -11,6 +11,12 @@ body{
 	background-attachment: fixed;
 }
 
+
+
+
+
+
+
 /*estilo para pagina Lista.php*/
 .listaExamen{
 	color:rgb(3,7,96);
@@ -60,6 +66,39 @@ body{
 	border-radius: 5px;
 	margin-top: 70px;
 	border: 1px solid #000;
+}
+
+.wrapPreguntas{
+	padding: 25px;
+	margin: 0 auto;
+
+	width: 500px;
+	background: rgb(243,243,243);
+	border-radius: 5px;
+	margin-top: 70px;
+	border: 1px solid #000;
+}
+
+.content {
+margin: 0 auto;
+position: relative;
+width: 800px;
+height: 50px;
+border:1px solid #000000;
+}
+
+.izquierda{
+width:400px;
+height:50px;
+background-color:green;
+float: left;
+}
+
+.derecha{
+width:400px;
+height:50px;
+background-color:yellow;
+float: right;
 }
 
 .wrap_lista{
