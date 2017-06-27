@@ -13,10 +13,14 @@ background-attachment: fixed;
 	
 }
 
+.nada{
+	
+}
+
 header{
 	color: #fff;
 	text-align: center;
-	background-color: #000;
+	background-color: #3b5998;
 	height: 50px;
 	padding: 6px 0px;
 }
