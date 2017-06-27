@@ -75,6 +75,43 @@ class Examen extends Connection
     
     }
 
+    public function agregaPregunta($pregunta,$examenId)
+    {
+
+
+        $this-> setQuery("insert into question(titulo,examenId)values('$pregunta', $examenId )");
+
+        $this-> Ejecutar();
+
+        $this-> setQuery(" select MAX(id) AS id FROM question");
+
+        $this-> Ejecutar();
+
+
+        $resultados=[];
+
+        while($row = $this-> getResult() -> fetch_array() ){
+         
+           
+            $resultados[] = $row;
+        }
+
+                
+        return $resultados; 
+    }
+
+    public function agregaOpcion($opcion,$preguntaId)
+    {
+
+
+        $this->setQuery("insert into opciones(nombreO,tipo,valor,preguntaId) values('$opcion',1,0,$preguntaId)");
+        $this-> Ejecutar();
+
+
+        return $this->getIsCorrect();
+
+    }
+
     
     
     

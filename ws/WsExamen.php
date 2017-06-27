@@ -130,6 +130,110 @@ class WsExamen
 
                 break; 
 
+            case 'addPregunta':
+
+                $pregunta = $this-> getPOST("pregunta");
+                $idExamen = $this ->getPOST("idExamen");
+
+
+                $errors = array();
+
+                if(empty($pregunta) )
+                     $errors[]= "Falta llenar campo de pregunta";
+                if(empty($idExamen) )
+                    $errors[]= "Examen no seleccionado";
+
+                 
+                if(count($errors) == 0  ){
+
+                    $ver= $this-> Examenes -> agregaPregunta($pregunta,$idExamen);
+
+
+                    $respuesta=[];
+                    
+                    if($ver){
+
+                    $respuesta= array("Mensaje" => "Pregunta agregada",
+                                    "codMensaje" => 100,
+                                    "Datos" => $ver);
+
+                    echo json_encode($respuesta);
+                    }else{
+                        $respuesta= array("Mensaje" => "Algo fallo ",
+                                    "codMensaje" => 200,
+                                    "Datos" => []);
+                    echo json_encode($respuesta);
+                    } 
+                }
+
+                if(isset($errors) and count($errors) > 0 ){
+
+                    
+                    $respuesta = array("Mensaje" => "Error",
+                                    "codMensaje" => 200,
+                                    "Datos" => $errors
+                                    );
+                        echo json_encode($respuesta);
+                }
+
+
+
+                break;
+
+            case 'agregarOpcion':
+
+
+ 
+                $opcion = $this-> getPOST("opcion");
+                $preguntaId = $this-> getPOST("preguntaId");
+
+                $errors = array();
+
+                if(empty($opcion) )
+                     $errors[]= "Falta llenar campo de opcion";
+                if(empty($preguntaId) )
+                    $errors[]= "Examen no seleccionado";
+
+                 
+                if(count($errors) == 0  ){
+
+
+                    $ver= $this-> Examenes -> agregaOpcion($opcion,$preguntaId);
+
+
+                    $respuesta=[];
+                    
+                    if($ver){
+
+                    $respuesta= array("Mensaje" => "Opcion agregada",
+                                    "codMensaje" => 100,
+                                    "Datos" => $ver);
+
+                    echo json_encode($respuesta);
+                    }else{
+                        $respuesta= array("Mensaje" => "Error al agregar Opcion ",
+                                    "codMensaje" => 200,
+                                    "Datos" => []);
+                    echo json_encode($respuesta);
+                    } 
+
+
+
+                }
+
+
+                if(isset($errors) and count($errors) > 0 ){
+
+                    
+                    $respuesta = array("Mensaje" => "Error",
+                                    "codMensaje" => 200,
+                                    "Datos" => $errors
+                                    );
+                        echo json_encode($respuesta);
+                }
+
+                break;
+
            
         	case 'N0':
 
