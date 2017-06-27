@@ -1,3 +1,5 @@
+<script src="../js/jquery-3.2.1.js"></script>
+
 <button class="botonInstrucciones" onclick="document.getElementById('ventana1').style.visibility='visible'">Instrucciones </button> 
 <div class="ventana" id="ventana1">
     <span class="cerrar" onclick="document.getElementById('ventana1').style.visibility='hidden'">x
@@ -6,12 +8,37 @@
         <br>
         <form>
             <h3>Instrucciones</h3>
-            <textarea rows="10" cols="50"> 
+            <textarea rows="10" cols="50" id="textContent"> 
             </textarea>
             <br>
             <br>
-            <button type="button" class="boton">Guardar Instrucciones</button>
+            <button type="button" class="boton"  id="inst">Guardar Instrucciones</button>
         </form>
     </center>
 </div>
+
+<script >
+    
+    $(function(){
+
+        $('#inst').click(   function (){
+
+            alert( $("#textContent").val()  );
+
+
+
+
+
+
+
+
+        });
+
+    });
+
+
+</script>
+
+
+
    
