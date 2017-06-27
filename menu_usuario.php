@@ -29,7 +29,7 @@
 					<ul class="submenu">
 						<li><a href="tipoExamen.php">Crear</a></li>
 						<li><a href="#">Eliminar</a></li>
-						<li><a href="buscarExamen.php">Lista de Exámeness</a></li>
+						<li><a href="buscarExamen.php">Lista de Exámenes</a></li>
 					</ul>
 			</li>
 
