@@ -11,9 +11,6 @@
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	</head>
 	<body>
-		<header>
-			<h1>Login<h1>
-		</header>
 		<form >
 			<h2>Iniciar sesión</h2>
 			<h4>Introduce tu usuario</h4>
