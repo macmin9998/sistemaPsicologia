@@ -34,7 +34,7 @@ $id = $_GET['id'];
 		        <div class="col-md-6">
 		            <label>Pregunta :</label>
 		        	<input type="text" id="txtPregunta" placeholder="Escriba su pregunta">
-		        
+		        	<!-- <br><div id="divPreguntaAgregada">Pregunta agregada</div>  -->
 		        </div>
 		        
 		        <div class="col-md-6">
@@ -67,6 +67,7 @@ $id = $_GET['id'];
          var cont=1;
 
     $(txtPregunta).css("background-color", "#F5FF9F");
+    //$("#divPreguntaAgregada").hide();
     
     $( "#txtPregunta" ).focus(function() {
 
@@ -103,7 +104,7 @@ $id = $_GET['id'];
 						alert(Respuesta.Mensaje);
 						if(Respuesta.codMensaje==100)
 							$(txtPregunta).css("background-color", "#79FA88");
-
+                            //$("#divPreguntaAgregada").show();
 						    $("#txtPregunta").prop('disabled', true);
 						    
  							
@@ -181,6 +182,7 @@ $id = $_GET['id'];
 					
 					}else if(Respuesta.codMensaje==200){
 						bandera2=false;
+						alert(Respuesta.Datos);	
 					}
 					
 					
@@ -196,7 +198,22 @@ $id = $_GET['id'];
         
             $('#regresar').click(function (){
 
-            	window.location.href = "crea.php?id="+$("#idExamen").val()+ ""; 
+
+            	
+				
+					var mensaje = confirm("¿Seguro que deseas regresar al Examen?");
+					
+					if (mensaje) {
+						alert("¡Examen Guardado!");
+						window.location.href = "crea.php?id="+$("#idExamen").val()+ ""; 
+						}
+						//Detectamos si el usuario denegó el mensaje
+					else {
+						alert("¡Sigue ingresando preguntas!");
+						}
+				
+
+            
 
 
         	});
