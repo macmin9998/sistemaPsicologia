@@ -33,7 +33,7 @@ $id = $_GET['id'];
 			<div class="row">
 		        <div class="col-md-6">
 		            <label>Pregunta :</label>
-		        	<input type="text" id="txtPregunta" placeholder="Escriba su pregunta">
+		        	<input type="text" id="txtPregunta" placeholder="Escriba su pregunta" title="Una vez ingresada la pregunta presione enter para guardar">
 		        	<!-- <br><div id="divPreguntaAgregada">Pregunta agregada</div>  -->
 		        </div>
 		        
@@ -42,7 +42,7 @@ $id = $_GET['id'];
 		        	<div id="contenido">
 
 						<label>Opciones :</label>
-						<input type='text' id='opcion1' name='name1' placeholder='Opcion 1'>
+						<input type='text' id='opcion1' name='name1' placeholder='Opcion 1' title="Ingresa la opcion y guardala">
 			
 					</div>
 					<br>
