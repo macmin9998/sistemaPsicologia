@@ -1,3 +1,8 @@
+<?php
+
+$tipo =$_GET["tipo"];
+
+?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -44,14 +49,15 @@
                 <button id="hola" class="boton">Entrar al Examen</button>
             </center>
         </div>
-       
+       <input type="hidden" id="hiddenTipo" value="<?php echo $tipo ?>">
         
 
         <script type="text/javascript">
         
         $(document).ready(function(){
- 
-            $.post('ws/WsExamen.php',{WS:"getExamen"},function(Respuesta){
+            var cajaTipo = $("#hiddenTipo").val();
+
+            $.post('ws/WsExamen.php',{WS:"getExamen",tipo:cajaTipo},function(Respuesta){
 
                
 
@@ -105,7 +111,16 @@
                     
                     var id= $('input:radio[name=edad]:checked').val();
 
-                    document.location.href = "crea.php?id=" + id;
+            
+                    if(typeof(id) == "undefined") {
+                        alert("Falto seleccionar algun examen");
+
+                    }
+                    if( !(typeof(id) == "undefined") ){
+                        document.location.href = "crea.php?id=" + id;  
+                    }
+
+                    
            
             });
         });

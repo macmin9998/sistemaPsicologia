@@ -23,8 +23,10 @@
 
             <table>
 
-               <center>
-                            <input type="hidden" value="<?php echo $_GET['id']?>" name="Id" id="txtexamenId" size='3' placeholder="Id Examen">
+               <center>     
+                            <input type="hidden" id="textUrl" value="<?php echo $_GET['prueba_exam']?>">
+                            <!-- Recibe el id enviado por get  -->
+                            <input type="hidden" name="Id" id="txtexamenId" size='3' placeholder="Id Examen">
                     <br>
                     
                     <br>
@@ -74,6 +76,29 @@
 
 
     <script>
+
+
+            $(document).ready(function(){
+
+                var cajaUrl= $("#textUrl").val();
+
+                $.post("ws/wsExamenP.php",
+                        {
+                        
+                        WS:"consultaId",
+                        url:cajaUrl
+
+                        },
+                function(Respuesta){
+                        
+                  // alert(Respuesta.Mensaje);
+                   
+                   $("#txtexamenId").val(Respuesta.Datos.examenId);
+
+                
+                },"json");      
+
+            });
 
 
 

@@ -67,7 +67,10 @@ class WsExamen
 
             case 'getExamen':
 
-                $busca = $this-> Examenes -> getExamenes();
+                $tipo = $this-> getPOST("tipo");
+
+                $busca = $this-> Examenes -> getExamenes($tipo);
+
                 
                 $respuesta=[];
 
@@ -191,8 +194,9 @@ class WsExamen
 
                 if(empty($opcion) )
                      $errors[]= "Falta llenar campo de opcion";
+                
                 if(empty($preguntaId) )
-                    $errors[]= "Examen no seleccionado";
+                    $errors[]= "No agrego una pregunta";
 
                  
                 if(count($errors) == 0  ){
