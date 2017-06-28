@@ -125,8 +125,9 @@ session_start();
                     for(var i =0 ; i<Respuesta.Datos.length;i++){
                         var tr = "<tr>"+
                        
-                          "<td><a href='examen.php?id="+Respuesta.Datos[i].examenId+"'"+Respuesta.Datos[i].url+"'>"+Respuesta.Datos[i].nombre+"</a></td>"+
-                          "<td>"+Respuesta.Datos[i].url+"</td> "+
+                          "<td><a href='examen.php?prueba_exam="+Respuesta.Datos[i].url+"'"+Respuesta.Datos[i].url+"'>"+Respuesta.Datos[i].nombre+"</a></td>"+
+                          "<td><input type=text  class='tam' value='http://psicologia.dev/examen.php?prueba_exam="+Respuesta.Datos[i].url+"'></td> "+
+                        
 
 
                           
@@ -146,7 +147,9 @@ session_start();
         });
     });
 
+    
 
+   
 
     $(document).ready(function(){
 
