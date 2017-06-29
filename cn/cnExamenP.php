@@ -99,6 +99,26 @@ class Examen extends Connection
             //return false;   
         }*/
 	}
+
+	public function consultaIdExamen($url)
+	{
+
+		$this-> setQuery("select examenId from examen where url='$url' ");
+		$this->Ejecutar();
+		$examenIdE=[];
+ 	
+		while($res = $this-> getResult() -> fetch_array()){
+
+			$examenIdE = $res;
+
+		}
+		    	
+        return $examenIdE; 
+
+
+
+
+	}
 	
 	
 

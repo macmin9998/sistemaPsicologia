@@ -67,7 +67,8 @@ $tipo =$_GET["tipo"];
 
 				alert(Respuesta.Mensaje);
 				if(Respuesta.codMensaje==100)
-					window.location.href = "Lista.php";
+					window.location.href = "Lista.php?tipo="+cajaTipo+"";
+                
                 else if(Respuesta.codMensaje == 200)
                     alert(Respuesta.Datos); 
 				

@@ -22,9 +22,9 @@ class Examen extends Connection
     	
     }
 
-    public function getExamenes()
+    public function getExamenes($tipo)
     {
-        $this-> setQuery("select examenId,nombre,url from examen");
+        $this-> setQuery("select examenId,nombre,url from examen where tipoExamen=$tipo ");
         $this->Ejecutar();
         $resultados=[];
         while($row = $this-> getResult() -> fetch_array() )
