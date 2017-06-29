@@ -77,7 +77,7 @@ h1{
 	padding: 25px;
 	margin: 0 auto;
 
-	width: 500px;
+	width: 40%;
 	background: rgb(243,243,243);
 	border-radius: 5px;
 	margin-top: 70px;
@@ -192,6 +192,18 @@ float: right;
 .boton:hover{
 	transform: scale(0.95);
 }
+
+.botonFinalizar{
+	padding: 8px 16px;
+	background:#66bb6a;
+	border: 0;
+	display: block;
+	font-weight: bold;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
 /*estilo para sinSesion.html*/
 .noSesion{
 	width: 400px;
@@ -245,7 +257,9 @@ float: right;
 	background-color: rgba(151, 148, 147,0.3);
 }
 
-
+.saltoLinea{
+	display: none;
+}
 
 
 
@@ -292,6 +306,18 @@ ul{
 @media (max-width:768px){
 	.wrap_crea{
 		width: 80%;
+	}
+	.saltoLinea{
+	display: block;
+	}
+}
+
+@media (min-width:320px) and (max-width: 567px) {
+	.wrapPreguntas{
+		width: 80%;
+	}
+	.saltoLinea{
+		display: block;
 	}
 }
 

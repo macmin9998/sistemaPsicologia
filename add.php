@@ -9,15 +9,16 @@ $id = $_GET['id'];
 <html>
 <head>
 	<title>.::Prueba </title>
-	
+	<meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/estilos_menu_pagina.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="js/jquery-3.2.1.js"></script>
 	<script src="js/main.js" ></script>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+-->
 
 </head>
 <body>
@@ -33,15 +34,21 @@ $id = $_GET['id'];
 			<div class="row">
 		        <div class="col-md-6">
 		            <label>Pregunta :</label>
+		            <br>
+		            <br>
 		        	<input type="text" id="txtPregunta" placeholder="Escriba su pregunta">
-		        
+		        	<br>
 		        </div>
-		        
-		        <div class="col-md-6">
+		        <br>
+		        <br>
+		        <br class="saltoLinea">
+		        <div class="col-md-6" >
 		        	
 		        	<div id="contenido">
-
+		        		<br class="saltoLinea">
 						<label>Opciones :</label>
+						<br>
+						<br>
 						<input type='text' id='opcion1' name='name1' placeholder='Opcion 1'>
 			
 					</div>
@@ -53,7 +60,7 @@ $id = $_GET['id'];
 		        </div>
             </div>
           
-           <center><br><br><button id="regresar" class="btn btn-success">Finalizar/Regresar al Examen </button></center>
+           <center><br><br><button id="regresar" class="botonFinalizar">Finalizar/Regresar al Examen </button></center>
             	
 
 	    </div>	
