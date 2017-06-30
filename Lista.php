@@ -78,8 +78,9 @@ $tipo =$_GET["tipo"];
                                 "<td class='margenTabla'>"+cont+".- "+
 
                                     Respuesta.Datos[i].nombre+"</td>"+
-                                "<td> "+
-                                    Respuesta.Datos[i].url+"</td>"+
+                                 "<td><input type=text  class='tam' value='http://psicologia.dev/examen.php?prueba_exam="+Respuesta.Datos[i].url+"'></td> "+
+
+
                                 "<td><input type='radio' name='edad' id='edad2' value="+Respuesta.Datos[i].examenId+">"+" "+
                                     cont+ "</td>"+
                             
