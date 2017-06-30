@@ -183,7 +183,7 @@ session_start();
                         var tr = "<tr>"+
                        
                           "<td><a href='examen1.php?id="+Respuesta.Datos[i].examenId+"'"+Respuesta.Datos[i].url+"'>"+Respuesta.Datos[i].nombre+"</a></td>"+
-                          "<td>"+Respuesta.Datos[i].url+"</td> "+
+                           "<td><input type=text  class='tam' value='http://psicologia.dev/examen.php?prueba_exam="+Respuesta.Datos[i].url+"'></td> "+
 
 
                           
@@ -236,7 +236,7 @@ session_start();
                         var tr = "<tr>"+
                        
                           "<td><a href='examen2.php?id="+Respuesta.Datos[i].examenId+"'"+Respuesta.Datos[i].url+"'>"+Respuesta.Datos[i].nombre+"</a></td>"+
-                          "<td>"+Respuesta.Datos[i].url+"</td> "+
+                           "<td><input type=text  class='tam' value='http://psicologia.dev/examen.php?prueba_exam="+Respuesta.Datos[i].url+"'></td> "+
 
 
                           
