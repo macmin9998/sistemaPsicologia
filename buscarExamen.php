@@ -43,7 +43,7 @@ session_start();
     </div>
 </form>
 
-    
+ <form>   
     <div class="tabla">
         <table id="tblRespuesta1" border="1" width="100%">
             
@@ -63,7 +63,8 @@ session_start();
 
 
     </div>
-
+</form>
+<form>
     <div class="tabla">
         <table id="tblRespuesta2" border="1" width="100%" >
             
@@ -84,7 +85,7 @@ session_start();
 
     </div>
 
-
+</form>
 
 
     <script type="text/javascript">
