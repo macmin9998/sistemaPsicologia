@@ -238,6 +238,35 @@ class WsExamen
 
                 break;
 
+            case 'dellExamen':
+
+                $examenId = $this-> getPOST("idExamen");
+
+                $del = $this-> Examenes -> borrarExamen($examenId);
+
+
+                $respuesta=[];
+                    
+                    if($ver){
+
+                    $respuesta= array("Mensaje" => "Opcion agregada",
+                                    "codMensaje" => 100,
+                                    "Datos" => $del);
+
+                    echo json_encode($respuesta);
+                    }else{
+                        $respuesta= array("Mensaje" => "Error al agregar Opcion ",
+                                    "codMensaje" => 200,
+                                    "Datos" => []);
+                    echo json_encode($respuesta);
+                    } 
+
+
+
+
+
+                break;
+
            
         	case 'N0':
 
