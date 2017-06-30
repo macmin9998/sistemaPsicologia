@@ -69,7 +69,7 @@ class Examen extends Connection
        public function getExamenAp($examenId){
 		$ExamenAp = [];
 
-		$this -> setQuery(" select  p.titulo, o.nombreO, o.valor from examen AS exa join  question AS p ON exa.examenId = p.examenId join opciones AS o ON  p.id = o.preguntaId where  exa.examenId=$examenId ");
+		$this -> setQuery(" select p.id, p.titulo, o.nombreO, o.valor from examen AS exa join  question AS p ON exa.examenId = p.examenId join opciones AS o ON  p.id = o.preguntaId where  exa.examenId=$examenId ");
 							
 		$this-> Ejecutar ();
 
@@ -98,6 +98,24 @@ class Examen extends Connection
         else{
             //return false;   
         }*/
+	}
+
+      
+	public function insertQuiz($id_participante, $examenId,$idPreg, $valor){
+		 
+		
+		
+       		
+				$this -> setQuery("insert into resultados (id_participante , examenId, id, valor) values ($id_participante, $examenId,$idPreg, $valor) ");
+				$this -> Ejecutar();
+
+				var_dump("insert into resultados (id_participante , examenId, id, valor) values ($id_participante, $examenId,$idPreg, $valor) ");
+		         
+
+          return true;
+       
+
+       
 	}
 	
 	

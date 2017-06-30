@@ -104,7 +104,31 @@ class wsExamen
                 }
                 break;
 
-           
+
+            case 'insertQuiz':
+            
+                $id_participante = $this-> getPOST("id_participante");
+                $examenId = $this-> getPOST("examenId");
+                $idPreg = $this-> getPOST("idPreg");
+                $valor = $this-> getPOST("valor");
+               
+             
+
+               
+
+                $var=$this-> Examen -> insertQuiz($id_participante, $examenId,$idPreg, $valor);
+
+               if($var){
+
+                    echo json_encode(array("Mensaje" => "Se registraron respuestas","codMensaje" => 100) );
+                }
+                else{
+
+                    echo json_encode(array("Mensaje"=>"No se registraron respuestas","codMensaje"=>200) );
+                }
+                break;
+               
+                
 
 
 

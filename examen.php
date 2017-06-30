@@ -26,6 +26,13 @@
             <table>
 
                <center>
+                    
+
+                    <br>
+                            <br>
+                           
+                            <input type="text" value="1" name="Id" id="id_participante" size='3' placeholder="">
+                    <br>
 
                     <br>
                             <br>
@@ -124,6 +131,7 @@
            $(document).ready(function(){
              $("#boton").click(function(){
                 $("#Cuestionario1").show();
+
                 $("#elemento").hide();
                 var examenId = $("#txtexamenId").val();
 
@@ -163,31 +171,49 @@
                         var pregunta = Respuesta.Datos[i].titulo;
                         var valorR= Respuesta.Datos[i].valor;
                         var nombreR= Respuesta.Datos[i].nombreO;
-                        //var idP= Respuesta.Datos[i].id;
+                        var idP= Respuesta.Datos[i].id;
 
                         var label = " ";
                         var input = " ";
-                        //var input2 = " ";
-                       
+                        var idpregunta = " ";
+                        var contador = " ";
+                        var contadorQ = 1;
+
+
+
+                        
+
                         if(pregunta != pActual){
                             cont++;
+                           
                             
-                            label = "<label>"+cont+".- "+pregunta+"<label><br>";
+                            idpregunta = "<input type='hidden' id='Quiz"+cont+"' value="+idP+"><br>";
+                            label = "<label >"+cont+".- "+pregunta+"<label><br>";
                            
                             pActual=pregunta; 
                          }  
                      
-                         input = "<input type='radio' name='rad"+cont+"' value='"+valorR+"'  "+">"+nombreR+"<br>";
-                        // input2 = "<input type='text' name='id"+cont+"' value='"+idP+"'  "+"><br>";
+                         input = "<input type='radio' id='valor"+cont+"' name='rad"+cont+"' value='"+valorR+"'  "+">"+nombreR+"<br>";
+                        
+                         contador = "<input type='hidden' id='contador' value='"+cont+"'>"
 
+                         
+
+                         
                           
 
                           
-                       
+                       divExamen.append(idpregunta); 
                        divExamen.append(label);
                        divExamen.append(input);
-                       //divExamen.append(input2);
+                       
+                       
                     }
+
+                     contadorQ = "<input type='text' id='contadorQ' value='"+cont+"'>"
+
+                    divExamen.append(contador);
+                    divExamen.append(contadorQ);
                 }
                 else{
                         console.log("estoy en el else");
@@ -197,14 +223,50 @@
                 },
                 "json");                
             });
-
-
-           
              
 
-           });
+        });
+
+
+           $(function(){
+       $("#btnfinalizar").click(function(){
+           var id_participante= $("#id_participante").val();
+           var examenId= $("#txtexamenId").val();
+           var contador = $("#contador").val();
+           var idPreg = 0;
+
+
+           for (var i = 1; i<= contador; i++){
+               
+               idPreg++;
+               var idPregunta = $("#Quiz"+idPreg).val();
+
+               
+               var rdb = $("#valor"+idPreg).val();
+               
+               alert(rdb);
+
+               $.post('ws/wsExamenP.php',{
+                   WS: 'insertQuiz',
+                   id_participante: id_participante,
+                   examenId: examenId,
+                   idPreg: idPregunta,
+                   valor: rdb
+               },
+               function(Respuesta){
+                   alert(Respuesta.Mensaje);
+                   if (Respuesta.CodeMensaje == 100){
+                       window.location = window.location;
+                   }
+               
+               }, "json")};
+       })
+   });
 
       </script>
+
+      <br>
+                    <button type="button" id="btnfinalizar" name="btnfinalizar">terminar examen</button>
 </body>
 
 
