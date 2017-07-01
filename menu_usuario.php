@@ -28,7 +28,7 @@
 				<div class="link"><i class="fa fa-file-text-o"></i>Examen<i class="fa fa-chevron-down"></i></div>
 					<ul class="submenu">
 						<li><a href="tipoExamen.php">Crear</a></li>
-						<li><a href="#">Eliminar</a></li>
+						<li><a href="eliminar.php">Eliminar</a></li>
 						<li><a href="buscarExamen.php">Lista de Exámenes</a></li>
 					</ul>
 			</li>
