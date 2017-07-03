@@ -112,6 +112,17 @@ class Examen extends Connection
 
     }
 
+    public function borrarExamen($examenId)
+    {
+
+        $this-> setQuery("delete p.titulo, o.nombreO, o.tipo from question p join opciones o on p.id=o.preguntaId join examen e where p.examenId=$examenId and e.examenId=$examenId");
+        $this->Ejecutar();
+
+        return $this->getIsCorrect();
+
+
+    }
+
     
     
     
