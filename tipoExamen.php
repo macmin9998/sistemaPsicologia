@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Tipo de Examen</title>
+		 <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, minimun-scale=1">
+
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
 		<link rel="stylesheet" href="css/estilos-tipoExamen.css">
@@ -17,9 +19,9 @@
   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>
 	<body>
-	<?php
-        include("inc/menu_pagina.html");
-    ?>
+		<?php
+	        include("inc/menu_pagina.html");
+	    ?>
 		<form class="opcionesExamen">
 			<h1>Tipo de examen a crear</h1>
 		</form>
@@ -33,7 +35,9 @@
 						<br>
 						<br>
 						<input type="radio" name="radio">Respuesta 1 
+						<br class="saltoLinea">
 						<input type="radio" name="radio">Respuesta 2
+						<br class="saltoLinea">
 						<input type="radio" name="radio">Respuesta 3
 						<br>
 						<br>
@@ -47,11 +51,13 @@
         		<div class="box">
             		<form action="index1.php" class="opcionesExamen">
 						<h2>Preguntas con varias respuesta</h2>
-						Ejemplo: Seleccione dos o mas respuesta
+						Ejemplo: Seleccione dos o mas respuestas
 						<br>
 						<br>
 						<input type="checkbox" name="checkbox1">Respuesta 1
+						<br class="saltoLinea">
 						<input type="checkbox" name="checkbox2">Respuesta 2
+						<br class="saltoLinea">
 						<input type="checkbox" name="checkbox3">Respuesta 3
 						<br>
 						<br>
@@ -72,7 +78,7 @@
 						Ejemplo: Escribe tu respuesta
 						<br>
 						<br>
-						<input type="text" >
+						<input type="text" id="cajaTexto">
 						<center>
 							<br>
 							<button name="tipo" value="3"> Crear examen </button>
@@ -116,7 +122,5 @@
 				</div>
 			</div>
 		</div>
-		
-
 	</body>
 </html>

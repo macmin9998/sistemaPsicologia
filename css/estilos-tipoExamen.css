@@ -16,6 +16,14 @@ body{
 	text-align: center;
 }
 
+.saltoLinea{
+	display:none;
+}
+
+.nada{
+	
+}
+
 h1{
 	margin-bottom: 20px;
 	font-size: 21px;
@@ -60,11 +68,57 @@ button:hover{
 #sortable li { 
 	margin: 0 3px 3px 3px; 
 	padding: 0.4em; 
-	padding-left: 1.5em; 
+	 
 	font-size: 1.4em; 
 	height: 18px; 
 }
  
- #sortable li span {
+#sortable li span {
   position: absolute; 
-  margin-left: -1.3em; }
+  margin-left: -1.3em;
+}
+
+
+
+
+@media(max-width: 320px){
+	.saltoLinea{
+		display:block;
+	}
+
+	#cajaTexto{
+		width: 100%;
+	}
+
+	#sortable li { 
+		font-size: 0.8em; 
+		width: 100%;
+	}
+
+}
+
+
+
+@media(max-width: 414px){
+	
+	#cajaTexto{
+		width: 100%;
+	}
+
+	#sortable li { 
+		font-size: 0.8em; 
+		width: 100%;
+	}
+
+}
+
+@media(min-width: 568px) and (max-width:1024px) {
+.saltoLinea{
+		display:block;
+	}
+
+	#sortable li { 
+		font-size: 1.4em; 
+		width: 100%;
+	}
+}
