@@ -321,3 +321,9 @@ ul{
 	}
 }
 
+@media(max-width: 640px){
+.margenTabla{
+	text-align: left;
+	padding-left: 70px;
+}
+
